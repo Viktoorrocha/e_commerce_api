@@ -1,0 +1,48 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+# C extensions
+*.so
+
+# Environments
+.env
+venv/
+env/
+/site/
+
+# Editor directories and files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Django stuff:
+*.log
+*.pot
+*.mo
+*.sqlite3
+db.sqlite3
+media/
+static_collected/
+
+# Celery stuff
+celerybeat-schedule/
+celerybeat.pid
+
+# Flask stuff
+instance/
+.webassets-cache
+
+# Windows stuff
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# macOS stuff
+.DS_Store
+
+# PyCharm specific
+.idea/
+.vscode/

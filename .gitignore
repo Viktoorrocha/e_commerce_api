@@ -46,3 +46,6 @@ Desktop.ini
 # PyCharm specific
 .idea/
 .vscode/
+
+# Enviroment variables
+.env

@@ -1,22 +1,18 @@
-"""
-URL configuration for app project.
+# app/urls.py
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/5.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include # Importe 'include' aqui!
+from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView, SpectacularRedocView # Inclua Redoc se quiser
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    # URLs para o DRF Spectacular (Documentação OpenAPI/Swagger)
+    path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
+    path('api/schema/swagger-ui/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
+    path('api/schema/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'), # Opcional: Redoc
+
+    # Inclua as URLs do seu app 'products' aqui
+    # É crucial que as URLs dos seus apps estejam incluídas!
+    path('api/', include('products.urls')), # Isso vai incluir '/api/categories/' e '/api/products/'
 ]

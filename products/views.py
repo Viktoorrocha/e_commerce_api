@@ -10,7 +10,7 @@ class CategoryViewSet(viewsets.ModelViewSet):
     '''
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
-    permission_classes = [AllowAny] # Por enquanto permite acesso a todos os usuários
+    permission_classes = [IsAuthenticated] # Por enquanto permite acesso a todos os usuários
 
 class ProductViewSet(viewsets.ModelViewSet):
     '''

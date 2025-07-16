@@ -44,6 +44,9 @@ INSTALLED_APPS = [
     'drf_spectacular',
     'django_filters',
     'drf_yasg',
+    'rest_framework_simplejwt',
+
+
 
     'users',
     'products',
@@ -52,6 +55,7 @@ INSTALLED_APPS = [
 
 REST_FRAMEWORK = { 
     'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.BasicAuthentication',
     ],

@@ -16,6 +16,7 @@ class ProductSerializer(serializers.ModelSerializer):
     '''
     Serializador para o modelo Product
     '''
+    category = serializers.PrimaryKeyRelatedField(queryset=Category.objects.all())
     class Meta:
         model = Product
         fields = '__all__' # Inclui todos os campos do modelo Product
